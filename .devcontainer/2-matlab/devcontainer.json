@@ -1,0 +1,11 @@
+{
+  "dockerFile": "Dockerfile",
+  "runArgs": ["--shm-size=512M"],  // shared memory required for MATLAB
+
+  "forwardPorts": [8888],
+  "portsAttributes": {
+    "8888": { "label": "MATLAB" }
+  },
+
+  "postStartCommand": "nohup bash -c 'run.sh -browser &' > /dev/null 2>&1"
+}

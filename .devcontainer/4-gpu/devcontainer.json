@@ -1,0 +1,28 @@
+{
+  "dockerFile": "Dockerfile",
+  
+  "workspaceMount": "source=${localWorkspaceFolder},target=/home/jovyan/work,type=bind", 
+  "workspaceFolder": "/home/jovyan/work",
+  "overrideCommand": false,
+  "forwardPorts": [8888],
+  
+  "runArgs": [
+    "--runtime=nvidia", // "--runtime=amd"
+    "--gpus=all"        // "--gpus='device=1,2'"
+  ],
+  
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/opt/conda/bin/python"
+      },
+      "extensions": [
+        "ms-python.python",             // for Python
+        "ms-toolsai.jupyter",           // for Python
+        "ms-toolsai.jupyter-keymap",    // for Python
+        "ms-vscode.live-server",
+        "analytic-signal.preview-pdf"
+      ]
+    }
+  }
+}

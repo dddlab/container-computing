@@ -1,0 +1,15 @@
+{
+  "dockerFile": "Dockerfile",
+  "containerEnv": { "TMPDIR": "/tmp" },
+
+  "forwardPorts": [6080],
+
+  "features": {
+    "ghcr.io/devcontainers/features/desktop-lite:1": {
+      "version": "latest",
+      "noVncVersion": "1.2.0",
+      "password": "noPassword",
+      "webPort": "6080"
+    }
+  }
+}
