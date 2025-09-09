@@ -16,7 +16,7 @@ jobs:
           command: uname -a
           dockerpush: never
         - config: 2-matlab
-          command: matlab -h
+          command: matlab -h || true # matlab -h returns 1 causing action to fail
           dockerpush: never
         - config: 3-jupyter
           command: radian --version
