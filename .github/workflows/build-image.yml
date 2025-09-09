@@ -45,8 +45,8 @@ jobs:
         uses: devcontainers/ci@v0.3
         with:
           configFile: ./.devcontainer/${{ matrix.config }}/devcontainer.json
-          imageName: ghcr.io/392781/${{ matrix.config }}
-          cacheFrom: ghcr.io/392781/${{ matrix.config }}
+          imageName: ghcr.io/dddlab/container-computing/${{ matrix.config }}
+          cacheFrom: ghcr.io/dddlab/container-computing/${{ matrix.config }}
           push: ${{ matrix.dockerpush }}
           runCmd: ${{ matrix.command }}
       
