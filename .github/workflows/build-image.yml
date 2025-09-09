@@ -14,16 +14,20 @@ jobs:
         include:
         - config: 1-minimal
           command: uname -a
-          dockerpush: never
+          platform: linux/amd64,linux/arm64
+          push: never
         - config: 2-matlab
           command: matlab -h || true # matlab -h returns 1 causing action to fail
-          dockerpush: never
+          platform: linux/amd64,linux/arm64
+          push: never
         - config: 3-jupyter
           command: radian --version
-          dockerpush: always
+          platform: linux/amd64      # RStudio Server does not support ARM architecture
+          push: always
         - config: 5-gui
           command: vncserver --version
-          dockerpush: never
+          platform: linux/amd64,linux/arm64
+          push: never
 
     runs-on: ubuntu-latest
     permissions:
@@ -55,7 +59,7 @@ jobs:
           configFile: ./.devcontainer/${{ matrix.config }}/devcontainer.json
           imageName: ghcr.io/dddlab/container-computing/${{ matrix.config }}
           cacheFrom: ghcr.io/dddlab/container-computing/${{ matrix.config }}
-          platform: linux/amd64,linux/arm64
-          push: ${{ matrix.dockerpush }}
+          platform: ${{ matrix.platform }}
+          push: ${{ matrix.push }}
           runCmd: ${{ matrix.command }}
       
