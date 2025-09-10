@@ -1,9 +1,7 @@
 name: 'build' 
-on: # rebuild any PRs and main branch changes
-  pull_request:
-  push:
-    branches:
-      - main
+on:
+  release:
+    types: [published]
 
 jobs:
   build:
@@ -57,10 +55,9 @@ jobs:
         uses: devcontainers/ci@v0.3
         with:
           configFile: ./.devcontainer/${{ matrix.config }}/devcontainer.json
-          imageName: ghcr.io/dddlab/container-computing/${{ matrix.config }}
           cacheFrom: ghcr.io/dddlab/container-computing/${{ matrix.config }}
+          imageName: ghcr.io/dddlab/container-computing/${{ matrix.config }}
+          imageTag: ${{ github.ref_name }}
           platform: ${{ matrix.platform }}
-          provenance: false
           push: ${{ matrix.push }}
           runCmd: ${{ matrix.command }}
-      

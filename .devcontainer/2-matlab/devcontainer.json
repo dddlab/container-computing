@@ -1,5 +1,7 @@
 {
+  // "image": "ghcr.io/dddlab/container-computing/2-matlab:latest",
   "dockerFile": "Dockerfile",
+
   "runArgs": ["--shm-size=512M"],  // shared memory required for MATLAB
 
   "forwardPorts": [8888],
