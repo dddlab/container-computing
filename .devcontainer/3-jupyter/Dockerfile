@@ -10,7 +10,8 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* /tmp/library-scripts
     
 ### install RStudio server
-ARG RSTUDIO_VER="2023.12.1-402"
+### Stable version only available for amd64 architecture
+ARG RSTUDIO_VER="2025.05.1-513"
 ARG RSTUDIO_URL="https://download2.rstudio.org/server/jammy/amd64"
 RUN wget -q "${RSTUDIO_URL}/rstudio-server-${RSTUDIO_VER}-amd64.deb" && \
     apt-get install -yq --no-install-recommends ./rstudio*.deb && \
@@ -34,4 +35,4 @@ RUN echo 'options(repos=c(CRAN="https://cloud.r-project.org"))' > ~/.Rprofile &&
     R -q -e 'remotes::install_version("markdown", version="1.12")' && \
     R -q -e 'remotes::install_version("languageserver", version="0.3.16")' && \
     R -q -e 'remotes::install_version("httpgd", version="2.0.1")' && \
-    R -q -e 'remotes::install_github("ManuelHentschel/vscDebugger")'
+    R -q -e 'remotes::install_github("ManuelHentschel/vscDebugger", ref="v0.5.2")'
