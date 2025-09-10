@@ -60,6 +60,7 @@ jobs:
           imageName: ghcr.io/dddlab/container-computing/${{ matrix.config }}
           cacheFrom: ghcr.io/dddlab/container-computing/${{ matrix.config }}
           platform: ${{ matrix.platform }}
+          provenance: false
           push: ${{ matrix.push }}
           runCmd: ${{ matrix.command }}
       
