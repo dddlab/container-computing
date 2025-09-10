@@ -57,7 +57,7 @@ jobs:
           configFile: ./.devcontainer/${{ matrix.config }}/devcontainer.json
           cacheFrom: ghcr.io/dddlab/container-computing/${{ matrix.config }}
           imageName: ghcr.io/dddlab/container-computing/${{ matrix.config }}
-          imageTag: ${{ github.ref_name }}
+          imageTag: ${{ github.ref_name }},latest
           platform: ${{ matrix.platform }}
           push: ${{ matrix.push }}
           runCmd: ${{ matrix.command }}
