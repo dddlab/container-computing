@@ -17,9 +17,9 @@ RUN wget -q "${RSTUDIO_URL}/rstudio-server-${RSTUDIO_VER}-amd64.deb" && \
     apt-get install -yq --no-install-recommends ./rstudio*.deb && \
     rm -f ./rstudio*.deb && \
     apt-get clean && \
-    chmod 777 /var/run/rstudio-server && \
-    chmod +t /var/run/rstudio-server
-    
+    chmod 1777 /var/run/rstudio-server && \
+    chmod 777 /etc/rstudio/rsession.conf
+
 USER ${NB_USER}
 
 ### RStudio launch button in JupyterLab
@@ -30,9 +30,9 @@ RUN mamba install -y -c conda-forge --freeze-installed \
 ### Enhanced R terminal
 RUN pip install radian==0.6.11
 
-### Additional editing and debugging tools for VS Code R development
-RUN echo 'options(repos=c(CRAN="https://cloud.r-project.org"))' > ~/.Rprofile && \
-    R -q -e 'remotes::install_version("markdown", version="1.12")' && \
-    R -q -e 'remotes::install_version("languageserver", version="0.3.16")' && \
-    R -q -e 'remotes::install_version("httpgd", version="2.0.1")' && \
-    R -q -e 'remotes::install_github("ManuelHentschel/vscDebugger", ref="v0.5.2")'
+## ### Additional editing and debugging tools for VS Code R development
+## RUN echo 'options(repos=c(CRAN="https://cloud.r-project.org"))' > ~/.Rprofile && \
+##     R -q -e 'remotes::install_version("markdown", version="1.12")' && \
+##     R -q -e 'remotes::install_version("languageserver", version="0.3.16")' && \
+##     R -q -e 'remotes::install_version("httpgd", version="2.0.1")' && \
+##     R -q -e 'remotes::install_github("ManuelHentschel/vscDebugger", ref="v0.5.2")'

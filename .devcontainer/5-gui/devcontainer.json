@@ -1,6 +1,6 @@
 {
-  "dockerFile": "Dockerfile",
-  "containerEnv": { "TMPDIR": "/tmp" },
+
+  "image": "docker.io/ubuntu:24.04",
 
   "forwardPorts": [6080],
 

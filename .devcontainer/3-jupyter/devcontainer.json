@@ -1,7 +1,9 @@
 {
+  // "image": "ghcr.io/dddlab/container-computing/3-jupyter:v0.0.2",
   "dockerFile": "Dockerfile",
   
-  "runArgs": ["--workdir=/workspaces/container-computing"],
+  "workspaceMount": "source=${localWorkspaceFolder},target=/home/jovyan/work,type=bind", 
+  "workspaceFolder": "/home/jovyan/work",
   "overrideCommand": false, // Lets JupyterLab server to run
   "forwardPorts": [8888],
   "portsAttributes": {
@@ -16,7 +18,10 @@
         "r.bracketedPaste": true,
         "r.plot.useHttpgd": true
       },
-      "extensions": ["reditorsupport.r", "RDebugger.r-debugger"]
+      "extensions": [
+        "ms-python.python", "ms-toolsai.jupyter", "ms-python.vscode-pylance",
+        "reditorsupport.r", "RDebugger.r-debugger"
+      ]
     }
   }
 }

@@ -1,10 +1,5 @@
 {
-  "dockerFile": "Dockerfile",
-  
-  "workspaceMount": "source=${localWorkspaceFolder},target=/home/jovyan/work,type=bind", 
-  "workspaceFolder": "/home/jovyan/work",
-  "overrideCommand": false,
-  "forwardPorts": [8888],
+  "image": "nvcr.io/nvidia/pytorch:25.08-py3",
   
   "runArgs": [
     "--runtime=nvidia", // "--runtime=amd"
@@ -14,14 +9,10 @@
   "customizations": {
     "vscode": {
       "settings": {
-        "python.defaultInterpreterPath": "/opt/conda/bin/python"
+        // "python.defaultInterpreterPath": "/opt/conda/bin/python"
       },
       "extensions": [
-        "ms-python.python",             // for Python
-        "ms-toolsai.jupyter",           // for Python
-        "ms-toolsai.jupyter-keymap",    // for Python
-        "ms-vscode.live-server",
-        "analytic-signal.preview-pdf"
+        "ms-python.python"
       ]
     }
   }

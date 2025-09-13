@@ -1,6 +1,6 @@
 {
-  // "image": "ghcr.io/dddlab/container-computing/2-matlab:latest",
-  "dockerFile": "Dockerfile",
+  "image": "ghcr.io/dddlab/container-computing/2-matlab:v0.0.2",
+  // "dockerFile": "Dockerfile",
 
   "runArgs": ["--shm-size=512M"],  // shared memory required for MATLAB
 

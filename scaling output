@@ -1,0 +1,99 @@
+### Jetstream2
+
+PyTorch Matrix Multiplication Test for Large Matrices
+PyTorch version: 2.8.0a0+34c6371d24.nv25.08
+Using device: cpu
+
+Running test for matrix size: 2048x2048
+Estimated memory requirement: 0.03 GB
+
+Running test for matrix size: 4096x4096
+Estimated memory requirement: 0.12 GB
+
+Running test for matrix size: 8192x8192
+Estimated memory requirement: 0.50 GB
+                   Matrix Multiplication Test Results                    
+┏━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
+┃ Matrix Size ┃ Memory Size (GB) ┃ Computation Time (s) ┃ Performance   ┃
+┡━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
+│ 2048x2048   │ 0.03             │ 0.0286               │ 601.72 GFLOPS │
+│ 4096x4096   │ 0.12             │ 0.1330               │ 1.03 TFLOPS   │
+│ 8192x8192   │ 0.50             │ 1.0658               │ 1.03 TFLOPS   │
+└─────────────┴──────────────────┴──────────────────────┴───────────────┘
+
+PyTorch Matrix Multiplication Test for Large Matrices
+PyTorch version: 2.8.0a0+34c6371d24.nv25.08
+Using device: cuda
+CUDA version: 13.0
+GPU: GRID A100X-20C
+GPU Memory: 20.00 GB
+
+Running test for matrix size: 2048x2048
+Estimated memory requirement: 0.03 GB
+
+Running test for matrix size: 4096x4096
+Estimated memory requirement: 0.12 GB
+
+Running test for matrix size: 8192x8192
+Estimated memory requirement: 0.50 GB
+                   Matrix Multiplication Test Results                   
+┏━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┓
+┃ Matrix Size ┃ Memory Size (GB) ┃ Computation Time (s) ┃ Performance  ┃
+┡━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━┩
+│ 2048x2048   │ 0.03             │ 0.0004               │ 40.92 TFLOPS │
+│ 4096x4096   │ 0.12             │ 0.0026               │ 52.82 TFLOPS │
+│ 8192x8192   │ 0.50             │ 0.0192               │ 57.15 TFLOPS │
+└─────────────┴──────────────────┴──────────────────────┴──────────────┘
+Scaling plot saved as 'scaling_plot.png'
+
+## TACC Stampede3
+
+c561-003[h100](71)$ apptainer exec --nv pytorch.sif python pytorch_matmul_scaling_test.py --no-gpu
+INFO:    gocryptfs not found, will not be able to use gocryptfs
+PyTorch Matrix Multiplication Test for Large Matrices
+PyTorch version: 2.8.0a0+34c6371d24.nv25.08
+Using device: cpu
+
+Running test for matrix size: 2048x2048
+Estimated memory requirement: 0.03 GB
+
+Running test for matrix size: 4096x4096
+Estimated memory requirement: 0.12 GB
+
+Running test for matrix size: 8192x8192
+Estimated memory requirement: 0.50 GB
+                   Matrix Multiplication Test Results
+┏━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
+┃ Matrix Size ┃ Memory Size (GB) ┃ Computation Time (s) ┃ Performance   ┃
+┡━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
+│ 2048x2048   │ 0.03             │ 0.1181               │ 145.47 GFLOPS │
+│ 4096x4096   │ 0.12             │ 0.9293               │ 147.89 GFLOPS │
+│ 8192x8192   │ 0.50             │ 7.5455               │ 145.72 GFLOPS │
+└─────────────┴──────────────────┴──────────────────────┴───────────────┘
+Scaling plot saved as 'scaling_plot.png'
+c561-003[h100](72)$ apptainer exec --nv pytorch.sif python pytorch_matmul_scaling_test.py
+INFO:    gocryptfs not found, will not be able to use gocryptfs
+PyTorch Matrix Multiplication Test for Large Matrices
+PyTorch version: 2.8.0a0+34c6371d24.nv25.08
+Using device: cuda
+CUDA version: 13.0
+GPU: NVIDIA H100
+GPU Memory: 93.10 GB
+
+Running test for matrix size: 2048x2048
+Estimated memory requirement: 0.03 GB
+
+Running test for matrix size: 4096x4096
+Estimated memory requirement: 0.12 GB
+
+Running test for matrix size: 8192x8192
+Estimated memory requirement: 0.50 GB
+                   Matrix Multiplication Test Results
+┏━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
+┃ Matrix Size ┃ Memory Size (GB) ┃ Computation Time (s) ┃ Performance   ┃
+┡━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
+│ 2048x2048   │ 0.03             │ 0.0002               │ 101.49 TFLOPS │
+│ 4096x4096   │ 0.12             │ 0.0007               │ 204.20 TFLOPS │
+│ 8192x8192   │ 0.50             │ 0.0050               │ 220.89 TFLOPS │
+└─────────────┴──────────────────┴──────────────────────┴───────────────┘
+Scaling plot saved as 'scaling_plot.png'

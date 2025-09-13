@@ -13,7 +13,7 @@ jobs:
         - config: 1-minimal
           command: uname -a
           platform: linux/amd64,linux/arm64
-          push: always
+          push: never
         - config: 2-matlab
           command: matlab -h || true # matlab -h returns 1 causing action to fail
           platform: linux/amd64,linux/arm64
