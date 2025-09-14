@@ -1,12 +1,15 @@
 {
-
   "image": "docker.io/ubuntu:24.04",
 
+  "remoteUser": "ubuntu",
   "forwardPorts": [6080],
 
   "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "configureZshAsDefaultShell": true,
+      "username": "ubuntu"
+    },
     "ghcr.io/devcontainers/features/desktop-lite:1": {
-      "version": "latest",
       "noVncVersion": "1.2.0",
       "password": "noPassword",
       "webPort": "6080"
