@@ -14,7 +14,7 @@ The following repository contains a number of example Docker based [Development 
 
 ## Usage
 
-Before using this, you must have [Visual Studio Code](https://code.visualstudio.com/) (VS Code) and the [Dev Container extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) downloaded and installed. Additionally, the latest version of [Docker Desktop](https://docs.docker.com/get-started/get-docker/) or [Docker Engine](https://docs.docker.com/engine/install/) is required to run this on a local machine. GitHub Codespaces is an optional alternative and can be launched via the "Code" dropdown menu in this repository:
+Before using this, you must have [Visual Studio Code](https://code.visualstudio.com/) (VS Code) and the [Dev Container extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) downloaded and installed. Additionally, the latest version of [Docker Desktop](https://docs.docker.com/get-started/get-docker/) or [Docker Engine](https://docs.docker.com/engine/install/) is required to run this on a local machine. For more information, check Appendix A in the paper for installation instructions. GitHub Codespaces is an optional alternative and can be launched via the "Code" dropdown menu in this repository:
 
 <p align="center">
     <img alt="GitHub Codespaces launch option" src="./imgs/image.png" width="40%">
