@@ -14,7 +14,13 @@ The following repository contains a number of example Docker based [Development 
 
 ## Usage
 
-Before using this, you must have [Visual Studio Code](https://code.visualstudio.com/) (VS Code) and the [Dev Container extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) downloaded and installed. **Note:** Multiple container profiles used in this repository are not supported by GitHub Codespaces and therefore are only compatible with VS Code. *There is a default container that follows `4-customized` schema that will launch if using Codespaces.*
+Before using this, you must have [Visual Studio Code](https://code.visualstudio.com/) (VS Code) and the [Dev Container extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) downloaded and installed. Additionally, the latest version of [Docker Desktop](https://docs.docker.com/get-started/get-docker/) or [Docker Engine](https://docs.docker.com/engine/install/) is required to run this on a local machine. GitHub Codespaces is an optional alternative and can be launched via the "Code" dropdown menu in this repository:
+
+<p align="center">
+    <img alt="GitHub Codespaces launch option" src="./imgs/image.png">
+</p>
+
+**Note:** Multiple container profiles used in this repository are not supported by GitHub Codespaces and therefore are only compatible with VS Code. *There is a default container that follows `./.devcontainer/3-jupyter` schema that will launch if using Codespaces.*
 
 
 1. Clone the repository on your desired system:
@@ -28,7 +34,7 @@ git clone git@github.com:dddlab/container-computing.git
 3. Using the "Remote Window" interface, select "Reopen in Container":
 
 <p align="center">
-    <img alt='Image of VS Code "Remote Window" button' src="imgs/image.png">
+    <img alt='Image of VS Code "Remote Window" button' src="imgs/image-1.png">
 </p>
 
 <p align="center">
