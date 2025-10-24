@@ -1,0 +1,27 @@
+{
+  // "image": "ghcr.io/dddlab/container-computing/3-jupyter:v0.0.2",
+  "dockerFile": "Dockerfile",
+  
+  "workspaceMount": "source=${localWorkspaceFolder},target=/home/jovyan/work,type=bind", 
+  "workspaceFolder": "/home/jovyan/work",
+  "overrideCommand": false, // Lets JupyterLab server to run
+  "forwardPorts": [8888],
+  "portsAttributes": {
+    "8888": { "label": "JupyterLab" }
+  },
+  
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/opt/conda/bin/python",
+        "r.rterm.linux": "/opt/conda/bin/radian",
+        "r.bracketedPaste": true,
+        "r.plot.useHttpgd": true
+      },
+      "extensions": [
+        "ms-python.python", "ms-toolsai.jupyter", "ms-python.vscode-pylance",
+        "reditorsupport.r", "RDebugger.r-debugger"
+      ]
+    }
+  }
+}
