@@ -10,7 +10,7 @@ The following repository contains a number of example Docker based [Development 
 
 - Devcontainers 1,2,3,5: Any system using Docker container engine
 - Devcontainer 4: Any system with a CUDA 12 enabled Nvidia GPU
-- `slurm-gpu.sh`: Texas A&M University's FASTER cluster
+- `slurm-gpu.sh`: [TACC Stampede3 cluster](https://tacc.utexas.edu/systems/stampede3/)
 
 ## Usage
 
