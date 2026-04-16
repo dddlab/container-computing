@@ -1,4 +1,6 @@
 {
+  // Default launch option for GitHub CodeSpaces based on 3-jupyter development container.
+  
   // "image": "ghcr.io/dddlab/container-computing/3-jupyter:v0.0.2",
   "dockerFile": "Dockerfile",
   
