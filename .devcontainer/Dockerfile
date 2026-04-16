@@ -1,3 +1,5 @@
+# Default launch option for GitHub CodeSpaces based on 3-jupyter development container.
+
 FROM quay.io/jupyter/datascience-notebook:r-4.3.3
 
 USER root
